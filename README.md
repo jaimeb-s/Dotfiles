@@ -81,7 +81,7 @@ main = do
 			, modMask = myModMask
 		}
 ```
-Para configurarlo, click [aqui](https://github.com/jaimeb-s/Dotfiles/tree/main/.config/xmonad)
+Para configurarlo, click [aqui](https://github.com/jaimeb-s/Dotfiles/tree/main/.xmonad)
 
 # Gestor de pantalla
 
