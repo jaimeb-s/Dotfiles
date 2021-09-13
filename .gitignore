@@ -1,0 +1,16 @@
+/*
+
+!.config/
+!.screenshot/
+!.wallpapers/
+!.xmonad/
+
+!.gitconfig
+!.gitignore
+!.gtkrc-2.0
+!.xprofile
+!README.cursor.md
+!README.grub.md
+!README.gtk.md
+!README.lightdm.md
+!README.md

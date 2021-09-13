@@ -1,0 +1,21 @@
+// Coloque sus atajos de teclado en este archivo para sobreescribir los valores predeterminadosauto[]
+[
+    // ---------- Extencions ----------
+    // Bracket Pair Colorizer 2
+    {
+        "key": "shift+k",
+        "command": "bracket-pair-colorizer-2.expandBracketSelection",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+j",
+        "command": "bracket-pair-colorizer-2.undoBracketSelection",
+        "when": "editorTextFocus"
+    },
+
+    // CodeSnap
+    {
+        "key": "ctrl+shift+c s",
+        "command": "codesnap.start"
+    }
+]

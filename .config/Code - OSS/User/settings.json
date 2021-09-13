@@ -1,0 +1,89 @@
+{
+    // ---------- Text Editor ----------
+    "editor.lineNumbers": "relative",
+    "editor.mouseWheelZoom": true,
+    "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "all",
+    "editor.semanticHighlighting.enabled": false,
+    "editor.tabSize": 4,
+    "editor.tokenColorCustomizations": {
+        "[Mayukai Dark]": {
+            "comments": "#41536d"
+        }
+    },
+
+    // Cursor
+    "editor.cursorBlinking": "expand",
+    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorStyle": "line-thin",
+
+    // Font
+    "editor.fontFamily": "'Mononoki Nerd Font','UbuntuMono Nerd Font','Hack Nerd Font'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    "editor.fontWeight": "500",
+
+    //// Minimap
+    "editor.minimap.enabled": false,
+
+    // Files
+    "files.autoSave": "afterDelay",
+    "files.insertFinalNewline": true,
+
+    // ---------- Workbench ----------
+    // Appearences
+    "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {
+        "[Mayukai Dark]": {
+            "editorGroupHeader.tabsBorder": "#643281",
+        },
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.tree.indent": 10,
+    "workbench.colorTheme": "Mayukai Dark",
+
+    // ---------- Window ----------
+    "window.menuBarVisibility": "toggle",
+    "window.titleSeparator": " · ",
+
+    // ---------- Features ----------
+    // Terminal
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorWidth": 2,
+    "terminal.integrated.fontFamily": "'Mononoki Nerd Font','UbuntuMono Nerd Font','Hack Nerd Font'",
+    "terminal.integrated.fontSize": 15,
+
+    // ---------- Extencions ----------
+    // Bracket Pair Colorizer 2
+    "bracket-pair-colorizer-2.activeScopeCSS": [
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}",
+        "opacity: 0.5"
+    ],
+    "bracket-pair-colorizer-2.colorMode": "Consecutive",
+    "bracket-pair-colorizer-2.colors": [
+        "Gold",
+        "Orchid",
+        "LightSkyBlue",
+        "Violet",
+    //    "Red",
+    //    "Blue",
+    ],
+    "bracket-pair-colorizer-2.forceIterationColorCycle": true,
+    "bracket-pair-colorizer-2.forceUniqueOpeningColor": true,
+    "bracket-pair-colorizer-2.showBracketsInGutter": true,
+    
+    // CodeSnap
+    "codesnap.backgroundColor": "#262a31",
+    "codesnap.containerPadding": "2em",
+    "codesnap.showWindowControls": false,
+    "codesnap.showWindowTitle": true,
+
+    // Material Icon Theme 
+    "material-icon-theme.folders.color": "#FF5555",
+    "material-icon-theme.folders.theme": "specific",
+    "material-icon-theme.opacity": 0.75,
+}

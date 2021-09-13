@@ -1,0 +1,219 @@
+# Prompt
+# formar = yellow
+format = """
+[┌─────────────────────────────────────────────](#d5911a) 
+[│](#d5911a)$username$directory$git_branch$git_status$hg_branch$python$custom$cmd_duration $battery
+[└─>](#d5911a) $character """
+scan_timeout = 10
+command_timeout = 500
+
+#[aws]
+#format = 'on [$symbol($profile )(\($region\) )(\[$duration\])]($style)'
+#symbol = " "
+
+#[battery]
+
+[[battery.display]]
+threshold = 15
+style = "#f22c40"   # Color = red
+
+#[[battery.display]]
+#threshold = 50
+#style = "bold yellow"
+
+[character]
+format = "$symbol"
+#success_symbol = " [└─](bold red)[ ](bold blue)"
+success_symbol = "[ ](#407ee7)"    # Color = Blue
+error_symbol = "[×](#f22c40)"       # Color = red
+
+#[cmake]
+
+[cmd_duration]
+min_time = 1
+format = " [$duration]($style)"
+style = "#d5911a"   # Color = yellow
+disabled = false
+
+#[conda]
+#symbol = " "
+
+#[crystal]
+
+#[dart]
+#symbol = " "
+
+#[deno]
+
+[directory]
+#style = "bold blue"
+truncation_length = 0
+truncate_to_repo = true
+format = "[$path]($style) [$read_only]($read_only_style)"
+style = "#00ad9c"         # Color = cyan
+read_only = " "
+read_only_style = "#f22c40" # Color = red
+home_symbol = " ~"
+
+#[docker_context]
+#symbol = " "
+
+#[dotnet]
+
+#[elixir]
+#symbol = " "
+
+#[elm]
+#symbol = " "
+
+#[env_var]
+
+#[erlang]
+
+#[gcloud]
+
+[git_branch]
+format = "[$symbol$branch]($style)"
+symbol = " "
+style = "#6666ea"   # Color = magenta o purple
+
+#[git_commit]
+
+#[git_state]
+
+#[git_metrics]
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+#deleted = "x"
+style = "#5ab738"   # Color = green o red
+
+#[golang]
+#symbol = " "
+
+#[helm]
+
+#[hostname]
+
+#[java]
+#symbol = " "
+
+#[jobs]
+
+#[julia]
+#symbol = " "
+
+#[kotlin]
+
+#[kubernetes]
+
+[line_break]
+disabled = false
+
+#[lua]
+
+#[memory_usage]
+
+[hg_branch]
+symbol = " "
+
+#[nim]
+#symbol = " "
+
+#[nix_shell]
+#symbol = " "
+
+#[nodejs]
+#symbol = " "
+
+#[ocaml]
+
+#[openstack]
+
+#[package]
+#symbol = " "
+
+#[perl]
+#symbol = " "
+
+#[php]
+#symbol = " "
+
+#[purescript]
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = " "
+style = "#766e6b"   # Color = black o yellow
+
+#[rlang]
+
+#[red]
+
+#[ruby]
+#symbol = " "
+
+#[rust]
+#symbol = " "
+
+#[scala]
+
+#[shell]
+#fish_indicator = " "
+
+#[shlvl]
+
+#[singularity]
+
+#[status]
+#disabled = false
+#format = "[$symbol $status]($style) "
+#not_found_symbol = " "
+#not_executable_symbol = " "
+#sigint_symbol = " ﭦ"
+#map_symbol = true
+
+#[swift]
+#symbol = "ﯣ "
+
+#[terrafom]
+
+#[time]
+#format = "[$time]($style) "
+#use_12hr = true
+#time_format = "%r"
+#style = "bold yellow"
+#disabled = false
+
+[username]
+style_root = "#f22c40"      # Color = red
+style_user = "#5ab738"      # Color = green
+format = "[$user]($style) "
+show_always = true
+
+#[vagrant]
+
+#[v]
+
+#[vcsh]
+
+#[zig]
+
+# Personalizados
+# imagenes
+#[custom.img]
+#extensions = ["jpg"]
+#symbol = " Img"
+#style = "#766e6b"   # Color = black
+#format = "[$symbol]($style) "
+
+# haskell
+[custom.haskell]
+extensions = ["hs"]
+symbol = " Haskell"
+style = "#766e6b"   # Color = black
+format = "[$symbol]($style) "

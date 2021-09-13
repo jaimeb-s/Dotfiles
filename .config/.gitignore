@@ -1,0 +1,16 @@
+/*
+
+!alacritty/
+!bat/
+!Code - OSS/
+!fish/
+!gtk-3.0/
+!nvim/
+!picom/
+!rofi/
+!xmobar/
+
+!.gitignore
+!starship.toml
+!user-dirs.dirs
+!user-dirs.locale

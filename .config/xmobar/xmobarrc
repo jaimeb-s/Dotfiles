@@ -1,0 +1,70 @@
+Config {
+    -- appearance
+    font                = "xft:Mononoki Nerd Font:weight=bold:pixelsize=14:antialias=true:hinting=true"
+    -- , additionalFonts   = ["xft:Hack Nerd Font:weight=bold:pixelsize=15:antialias=true:hinting=true"]
+    -- Background
+    , bgColor = "#1b1918"
+    -- Foreground
+    , fgColor = "#a8a19f"
+    --, position          = Top
+    --, border            = BottomB
+    --, borderColor       = "#6272a4"
+    --, borderWidth       = 1
+
+    -- general behavior
+    , lowerOnStart      = True      -- send to bottom of window stack on start
+    , hideOnStart       = False     -- start with window unmapped (hidden)
+    , allDesktops       = True      -- show on all desktops
+    , overrideRedirect  = False     -- set the Override Redirect flag (Xlib)
+    , pickBroadest      = False     -- choose widest display (multi-monitor)
+    , persistent        = True      -- enable/disable hiding (True = disabled)
+
+    , commands = [
+        Run UnsafeStdinReader
+        , Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 10
+        , Run DynNetwork [
+            "--template" , "   <tx>kB/s  <rx>kB/s"
+            , "--Low"      , "1000"       -- units: B/s
+            , "--High"     , "5000"       -- units: B/s
+            , "--low"      , "#00c408"  -- "darkgreen"
+            , "--normal"   , "#e6d119"  -- "darkorange"
+            , "--high"     , "#e81017"  -- "darkred"
+        ] 10
+        , Run Battery [
+            "--template" , "<acstatus>"
+            , "--Low"      , "10"       -- units: %
+            , "--High"     , "80"       -- units: %
+            , "--low"      , "#e81017"  -- "darkred"
+            , "--normal"   , "#4bbf50"  -- "darkorange"
+            , "--high"     , "#00c408"  -- "darkgreen"
+            , "--" -- battery specific options
+                      -- discharging status
+                      --, "-o"	, "<left>% (<timeleft>)"
+                      , "-o"	, " <left>%"
+                      -- AC "on" status
+                      , "-O"	, "<fc=#da2320></fc>"
+                      -- charged status
+                      , "-i"	, "<fc=#009600></fc>"
+        ] 50
+        , Run Com "pamixer" ["--get-volume"] "audio" 10
+        , Run Date "<fc=#6666ea> [%a]%d-%b-%y</fc> <fc=#a8a19f>%I:%M %p</fc>" "date" 10
+        -- Date         magenta                         white
+    ]
+    
+    -- layout
+    , sepChar   =  "%"  -- delineator between plugin names and straight text
+    , alignSep  = "}{"  -- separator between left-right alignment
+    , template  = " <fc=#333af5> </fc>\
+                    \%UnsafeStdinReader%\
+                    \}{\
+                    \|<fc=#f22c40> %updates%</fc>|\
+                    \<fc=#5ab738> %dynnetwork%</fc>|\
+                    \<fc=#407ee7>%battery%</fc>|\
+                    \<fc=#d5911a> %audio%</fc>|\
+                    \%date% "
+}
+
+-- Update = red
+-- Dynnetwork = green
+-- Baterry = blue
+-- Audio = yellow

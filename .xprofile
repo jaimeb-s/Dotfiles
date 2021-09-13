@@ -1,0 +1,11 @@
+#!/bin/sh
+export PATH=$HOME/.local/bin:$PATH
+
+# Distribucion de teclado
+setxkbmap latam &
+# Unidades externas
+udiskie -t &
+# Picom
+picom &
+# Numlock
+numlockx &
