@@ -73,7 +73,7 @@ home_symbol = " ~"
 #[gcloud]
 
 [git_branch]
-format = "[$symbol$branch]($style)"
+format = "[$symbol$branch]($style) "
 symbol = " "
 style = "#6666ea"   # Color = magenta o purple
 
