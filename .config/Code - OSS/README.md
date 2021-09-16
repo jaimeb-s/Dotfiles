@@ -6,13 +6,13 @@ Copiar mis configuraciones.
 
 ```bash
 git clone https://github.com/jaimeb-s/Dotfiles.git
-cp Dotfiles/.config/Code\ -\ OSS/User/*.json ~/.config/Code\ -\ OSS/User/
-cp -r Dotfiles/.config/Code\ -\ OSS/User/snippets ~/.config/Code\ -\ OSS/User/
+cp Dotfiles/.config/Code\ -\ OSS/User/*.json ~/.config/Code\ -\ OSS/User
+cp -r Dotfiles/.config/Code\ -\ OSS/User/snippets ~/.config/Code\ -\ OSS/User
 ```
 
 # Extenciones
 
-Acontinuacion se muestran las extenciones que utilizo.
+A continuacion se muestran las extenciones que utilizo.
 
 |   Extencion   |
 | ------------- |

@@ -28,7 +28,7 @@
     - [Cursor](README.cursor.md)
     - [GTK](README.gtk.md)
     - [Grub](README.grub.md)
-    - [Code](https://github.com/jaimeb-s/Dotfiles/tree/main/.config/Code-OSS/)
+    - [Code](https://github.com/jaimeb-s/Dotfiles/tree/main/.config/Code%20-%20OSS)
     - [Nvim](https://github.com/jaimeb-s/Dotfiles/tree/main/.config/nvim)
 
 # AUR
@@ -101,9 +101,6 @@ Para crear los directorios de usuario instalar **[xdg-users-dirs](https://archli
 
 ```bash
 sudo pacman -S xdg-user-dirs
-# Copiar los archivos
-git clone https://github.com/jaimeb-s/Dotfiles.git
-cp Dotfiles/.config/user-dirs.* ~/.config
 # crear los directorios
 xdg-user-dirs-update
 ```
@@ -122,7 +119,7 @@ Instalar los drivers **[rtl8821ce-dkms-git](https://github.com/tomaspinho/rtl882
 
 ```bash
 sudo pacman -S dkms base-devel bc linux-headers
-paru rtl8821ce-dkms-git
+paru -S rtl8821ce-dkms-git
 sudo modprobe 8821ce
 systemctl restart NetworkManager.service
 ```
@@ -191,6 +188,8 @@ greeter-setup-script=/usr/bin/numlockx on
 Para tener [notificaciones de escritorio](https://wiki.archlinux.org/title/Desktop_notifications), instalar [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/) y [notification-daemon](https://archlinux.org/packages/community/x86_64/notification-daemon/). Crear el siguiente archivo.
 
 ```bash
+sudo pacman -S libnotify notification-daemon
+
 # /usr/share/dbus-1/services/org.freedesktop.Notifications.service
 [D-BUS Service]
 Name=org.freedesktop.Notifications
