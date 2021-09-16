@@ -5,9 +5,9 @@
 Instalar los siguientes paquetes.
 
 ```bash
-sudo pacman -S xmonad xmonad-contrib alacritty rofi code scrot brightnessctl xmobar feh xdotool pamixer
+sudo pacman -S xmonad xmonad-contrib alacritty rofi code scrot brightnessctl xmobar feh xdotool pamixer pacman-contrib
 
-paru -S google-chrome nerd-fonts-mononoki checkupdates-systemd-git spotify
+paru -S google-chrome nerd-fonts-mononoki spotify
 ```
 
 Y despues copiar los archivos.
