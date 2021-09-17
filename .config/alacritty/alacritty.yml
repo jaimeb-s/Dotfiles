@@ -1,3 +1,7 @@
+import:
+  - ~/.config/alacritty/fonts.yml
+  - ~/.config/alacritty/colors.yml
+
 env:
   #TERM: alacritty
   TERM: xterm-256color
@@ -23,48 +27,7 @@ scrolling:
   history: 1000
   multiplier: 3
 
-font:
-  normal:
-    family: Mononoki Nerd Font
-    style: Regular
-  bold:
-    family: Mononoki Nerd Font
-    style: Bold
-  italic:
-    family: Mononoki Nerd Font
-    style: Italic
-  bold_italic:
-    family: Mononoki Nerd Font
-    style: Bold Italic
-  size: 12.0
-
 draw_bold_text_with_bright_colors: true
-
-colors:
-  # Default colors
-  primary:
-    background: '0x1b1918'
-    foreground: '0xa8a19f'
-  # Normal colors
-  normal:
-    black:   '0x1b1918'
-    red:     '0xf22c40'
-    green:   '0x5ab738'
-    yellow:  '0xd5911a'
-    blue:    '0x407ee7'
-    magenta: '0x6666ea'
-    cyan:    '0x00ad9c'
-    white:   '0xa8a19f'
-  # Bright colors
-  bright:
-    black:   '0x766e6b'
-    red:     '0xf22c40'
-    green:   '0x5ab738'
-    yellow:  '0xd5911a'
-    blue:    '0x407ee7'
-    magenta: '0x6666ea'
-    cyan:    '0x00ad9c'
-    white:   '0xf1efee'
 
 background_opacity:  0.88
 # background_opacity:  1.0
