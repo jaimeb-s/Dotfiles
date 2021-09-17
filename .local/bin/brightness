@@ -1,0 +1,14 @@
+#! /bin/bash
+
+(( br = $(brightnessctl get) * 100 / 255 ))
+
+if [[ $br == 0 ]]; then
+    echo -n " $br%"
+elif [[ $br -le 50 ]]; then
+    echo -n " $br%"
+elif [[ $br -le 75 ]]; then
+    echo -n " $br%"
+else
+    echo -n " $br%"
+fi
+

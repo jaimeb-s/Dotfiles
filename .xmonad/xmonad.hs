@@ -185,24 +185,26 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 myKeysAdd :: [(String, X ())]
 myKeysAdd = [
         -- Apps
-        ("M-g", spawn "google-chrome-stable")       -- Launch Google-Chrome
-        , ("M-c", spawn "code")                     -- Launch VS-Code
-        , ("<Print>", spawn "scrot")                -- Full screenshot  ((fn-imp pant) o (imp pant))
-        , ("M-<Print>", spawn "scrot -s")           -- Screenshot    ((Mod-fn-imp pant) o (Mod-imp pant))
-        , ("M-s", spawn "spotify")                  -- Launch Spotify
+        ("M-g",             spawn "google-chrome-stable")   -- Launch Google-Chrome
+        , ("M-c",           spawn "code")                   -- Launch VS-Code
+        , ("<Print>",       spawn "scrot 'Screenshot_%Y-%m-%d-%I-%M-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/$f'")         -- Full screenshot  ((fn-imp pant) o (imp pant))
+        , ("C-<Print>",     spawn "scrot -d 5 'Screenshot_%Y-%m-%d-%I-%M-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/$f'")    -- Full screenshot 5 seg
+        , ("C-S-<Print>",   spawn "scrot -u -b 'Screenshot_%Y-%m-%d-%I-%M-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/$f'") -- Screenshot window
+        , ("M-<Print>",     spawn "scrot -s 'Screenshot_%Y-%m-%d-%I-%M-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES)/$f'")      -- Screenshot select    ((Mod-fn-imp pant) o (Mod-imp pant))
+        , ("M-s",           spawn "spotify")                -- Launch Spotify
 
         -- Audio
-        --, ("<XF86AudioPlay>", spawn "")
-        --, ("<XF86AudioPrev>", spawn "")
-        --, ("<XF86AudioNext>", spawn "")
-
-        , ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
-        , ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
-        , ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle" )
+        , ("<XF86AudioPlay>", spawn "playerctl play-pause")
+        , ("<XF86AudioPrev>", spawn "playerctl previous")
+        , ("<XF86AudioNext>", spawn "playerctl next")
+        , ("<XF86AudioStop>", spawn "playerctl stop")
+        , ("<XF86AudioLowerVolume>",    spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
+        , ("<XF86AudioRaiseVolume>",    spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
+        , ("<XF86AudioMute>",           spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle" )
 
         -- Brightness
-        , ("<XF86MonBrightnessUp>", spawn "brightnessctl set +10%")
-        , ("<XF86MonBrightnessDown>", spawn "brightnessctl set 10%-")
+        , ("<XF86MonBrightnessUp>",     spawn "brightnessctl set +10%")
+        , ("<XF86MonBrightnessDown>",   spawn "brightnessctl set 10%-")
     ]
 
 ------------------------------------------------------------------------
@@ -466,13 +468,18 @@ help = unlines ["The default modifier key is 'alt'. Default keybindings:",
     "-- Apps",
     "mod-g              Launch Google-Chrome",
     "mod-c              Launch VS-Code",
+    "<Print>            Full screenshot",
+    "C-<Print>          Full screenshot 5 seg",
+    "C-S-<Print>        Screenshot window",
+    "M-<Print>          Screenshot select",
     "Print              Full screnshot",
     "mod-Print          Screnshot",
     "mod-Control-s      Launch Spotify",
     "-- Audio",
-    "XF86AudioPlay              ",
-    "XF86AudioPrev              ",
-    "XF86AudioNext              ",
+    "XF86AudioPlay              Audio play-puse",
+    "XF86AudioPrev              Audio previous",
+    "XF86AudioNext              Audio next",
+    "XF86AudioStop              Audio stop",
     "XF86AudioLowerVolume       Volume -",
     "XF86AudioRaiseVolume       Volume +",
     "XF86AudioMute              Mute",

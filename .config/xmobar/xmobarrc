@@ -30,23 +30,9 @@ Config {
             , "--normal"   , "#e6d119"  -- "darkorange"
             , "--high"     , "#e81017"  -- "darkred"
         ] 10
-        , Run Battery [
-            "--template" , "<acstatus>"
-            , "--Low"      , "10"       -- units: %
-            , "--High"     , "80"       -- units: %
-            , "--low"      , "#e81017"  -- "darkred"
-            , "--normal"   , "#4bbf50"  -- "darkorange"
-            , "--high"     , "#00c408"  -- "darkgreen"
-            , "--" -- battery specific options
-                      -- discharging status
-                      --, "-o"	, "<left>% (<timeleft>)"
-                      , "-o"	, " <left>%"
-                      -- AC "on" status
-                      , "-O"	, "<fc=#da2320></fc>"
-                      -- charged status
-                      , "-i"	, "<fc=#009600></fc>"
-        ] 50
-        , Run Com "pamixer" ["--get-volume"] "audio" 10
+        , Run Com "battery" [] "battery" 10
+        , Run Com "brightness" [] "brightness" 10
+        , Run Com "volume" [] "volume" 10
         , Run Date "<fc=#6666ea> [%a]%d-%b-%y</fc> <fc=#a8a19f>%I:%M %p</fc>" "date" 10
         -- Date         magenta                         white
     ]
@@ -59,12 +45,13 @@ Config {
                     \}{\
                     \|<fc=#f22c40> %updates%</fc>|\
                     \<fc=#5ab738> %dynnetwork%</fc>|\
-                    \<fc=#407ee7>%battery%</fc>|\
-                    \<fc=#d5911a> %audio%</fc>|\
+                    \%battery%|\
+                    \<fc=#407ee7>%brightness%</fc>|\
+                    \<fc=#d5911a>%volume%</fc>|\
                     \%date% "
 }
 
 -- Update = red
 -- Dynnetwork = green
--- Baterry = blue
--- Audio = yellow
+-- Brightness = blue
+-- Volume = yellow

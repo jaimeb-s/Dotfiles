@@ -1,0 +1,15 @@
+#! /bin/bash
+
+vol=`pamixer --get-volume`
+
+if [[ `pamixer --get-mute` == "true" ]]; then
+    echo -n "ﱝ $vol%"
+elif [[ $vol == 0 ]]; then
+    echo -n " $vol%"
+elif [[ $vol -le 25 ]]; then
+    echo -n "奔 $vol%"
+elif [[ $vol -le 50 ]]; then
+    echo -n "墳 $vol%"
+else
+   echo -n " $vol%"
+fi

@@ -1,0 +1,33 @@
+#! /bin/bash
+
+bat=`acpi | awk '{print $4}' | cut -c -2`
+status=`acpi | awk '{print $3}' | cut -c -8`
+not_char=`acpi | awk '{print $3 $4}' | cut -c -11`
+
+if [[ $not_char == "Notcharging" ]]; then
+    echo -n " NC"
+elif [[ $status == "Charging" ]]; then
+    echo -n " $bat%"
+elif [[ $bat == 100 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 90 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 80 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 70 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 60 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 50 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 40 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 30 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 20 ]]; then
+    echo -n " $bat%"
+elif [[ $bat -ge 10 ]]; then
+    echo -n " $bat%"
+else
+   echo -n " $bat%"
+fi
