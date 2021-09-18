@@ -7,7 +7,7 @@ Instalar los siguientes paquetes.
 ```bash
 sudo pacman -S xmonad xmonad-contrib alacritty rofi code scrot brightnessctl xmobar feh xdotool pamixer pacman-contrib playerctl acpi
 
-paru -S google-chrome nerd-fonts-mononoki spotify
+paru -S google-chrome nerd-fonts-mononoki spotify rofi-power-menu
 ```
 
 Y despues copiar los archivos.
