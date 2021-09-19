@@ -14,8 +14,8 @@ alias ll='exa -l --color=always --group-directories-first --icons'  # long forma
 alias lt='exa -aT --color=always --group-directories-first --icons' # tree listing
 alias l.="exa -a | egrep '^\.'"  
 
-# cat
-alias cat="bat --style=plain --paging=never"
+# Replace cat with bat
+alias cat="bat"
 
 # sudo
 alias sdo='sudo'
