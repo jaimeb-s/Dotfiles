@@ -17,7 +17,7 @@ import Data.Monoid
 import System.Exit
 
 -- Hocks
---import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.Place
@@ -311,6 +311,7 @@ myEventHook :: Event -> X All
 --myEventHook = mempty
 myEventHook = do
     focusOnMouseMove
+    fullscreenEventHook
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -342,7 +343,7 @@ myStartupHook = do
 ------------------------------------------------------------------------
 -- Config
 --
-myConfig = def {
+myConfig = ewmh def {
       -- simple stuff
         terminal           = myTerminal
         , focusFollowsMouse  = myFocusFollowsMouse
