@@ -1,13 +1,17 @@
 #! /bin/bash
 
-bat=`acpi | awk '{print $4}' | cut -c -2`
-status=`acpi | awk '{print $3}' | cut -c -8`
-not_char=`acpi | awk '{print $3 $4}' | cut -c -11`
+por=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 |
+    grep percentage |
+    sed 's/ *percentage: *//g'`
 
-if [[ $not_char == "Notcharging" ]]; then
-    echo -n " NC"
-elif [[ $status == "Charging" ]]; then
-    echo -n " $bat%"
+state=`upower -i /org/freedesktop/UPower/devices/battery_BAT0 |
+    grep state |
+    sed 's/ *state: *//'`
+
+bat=${por//%}
+
+if [ $state == "charging" -o $state == "fully-charged" ]; then
+    echo -n " $bat%"
 elif [[ $bat == 100 ]]; then
     echo -n " $bat%"
 elif [[ $bat -ge 90 ]]; then
@@ -28,6 +32,6 @@ elif [[ $bat -ge 20 ]]; then
     echo -n " $bat%"
 elif [[ $bat -ge 10 ]]; then
     echo -n " $bat%"
-else
-   echo -n " $bat%"
+elif [[ $bat -ge 0 ]]; then
+    echo -n " $bat%"
 fi
